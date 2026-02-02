@@ -213,94 +213,72 @@ Just Rocket League, organized and played the right way.</p>
 
 
 
-<!-- ================= STANDINGS (GOOGLE SITES SAFE) ================= -->
+<!-- ================= STANDINGS ================= -->
 <section id="standings">
-  <h2 contenteditable="true">League Standings</h2>
+<h2 contenteditable="true">League Standings</h2>
 
-  <!-- RADIO TABS -->
-  <div class="stand-tabs">
-    <input type="radio" name="standtab" id="tab1" checked>
-    <label for="tab1">Squire Division</label>
+<div class="tabs">
+  <button class="tab active" onclick="showTab('stand1',this)">Squire Division</button>
+  <button class="tab" onclick="showTab('stand2',this)">Knight Division</button>
+  <button class="tab" onclick="showTab('stand3',this)">Monarch Division</button>
+  <button class="tab" onclick="showTab('stand4',this)">Divine Division</button>
+</div>
 
-    <input type="radio" name="standtab" id="tab2">
-    <label for="tab2">Knight Division</label>
+<!-- SQUIRE -->
+<div id="stand1" class="division active">
+<h3 contenteditable="true">Squire Division</h3>
+<table>
+<tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
+<tr><td contenteditable>Team A</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team B</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team C</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team D</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team E</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team F</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+</table>
+</div>
 
-    <input type="radio" name="standtab" id="tab3">
-    <label for="tab3">Monarch Division</label>
+<!-- KNIGHT -->
+<div id="stand2" class="division">
+<h3 contenteditable="true">Knight Division</h3>
+<table>
+<tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
+<tr><td contenteditable>Team G</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team H</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team I</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team J</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team K</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team L</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+</table>
+</div>
 
-    <input type="radio" name="standtab" id="tab4">
-    <label for="tab4">Divine Division</label>
-  </div>
+<!-- MONARCH -->
+<div id="stand3" class="division">
+<h3 contenteditable="true">Monarch Division</h3>
+<table>
+<tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
+<tr><td contenteditable>Team M</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team N</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team O</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team P</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team Q</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team R</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+</table>
+</div>
 
-  <!-- SQUIRE -->
-  <div class="stand-division div1">
-    <h3 contenteditable>Squire Division</h3>
-    <table>
-      <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th></tr>
-      <tr><td contenteditable>Team A</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-      <tr><td contenteditable>Team B</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-    </table>
-  </div>
-
-  <!-- KNIGHT -->
-  <div class="stand-division div2">
-    <h3 contenteditable>Knight Division</h3>
-    <table>
-      <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th></tr>
-      <tr><td contenteditable>Team G</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-      <tr><td contenteditable>Team H</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-    </table>
-  </div>
-
-  <!-- MONARCH -->
-  <div class="stand-division div3">
-    <h3 contenteditable>Monarch Division</h3>
-    <table>
-      <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th></tr>
-      <tr><td contenteditable>Team M</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-      <tr><td contenteditable>Team N</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-    </table>
-  </div>
-
-  <!-- DIVINE -->
-  <div class="stand-division div4">
-    <h3 contenteditable>Divine Division</h3>
-    <table>
-      <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th></tr>
-      <tr><td contenteditable>Team S</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-      <tr><td contenteditable>Team T</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-    </table>
-  </div>
-
-  <style>
-    .stand-tabs { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px }
-    .stand-tabs input { display:none }
-    .stand-tabs label {
-      background:#1f2937;
-      color:#fff;
-      padding:10px 16px;
-      border-radius:6px;
-      cursor:pointer;
-      font-weight:600;
-    }
-
-    #tab1:checked ~ .div1,
-    #tab2:checked ~ .div2,
-    #tab3:checked ~ .div3,
-    #tab4:checked ~ .div4 { display:block }
-
-    .stand-division { display:none }
-
-    #tab1:checked + label,
-    #tab2:checked + label,
-    #tab3:checked + label,
-    #tab4:checked + label {
-      background:#7c3aed;
-    }
-
-    table { width:100%; border-collapse:collapse }
-    th, td { border:1px solid #374151; padding:8px; text-align:center }
-  </style>
+<!-- DIVINE -->
+<div id="stand4" class="division">
+<h3 contenteditable="true">Divine Division</h3>
+<table>
+<tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
+<tr><td contenteditable>Team S</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team T</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team U</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team V</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team W</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+<tr><td contenteditable>Team X</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+</table>
+</div>
 </section>
 
 
