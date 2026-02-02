@@ -217,15 +217,14 @@ Just Rocket League, organized and played the right way.</p>
 <section id="standings">
 <h2 contenteditable="true">League Standings</h2>
 
-<div class="tabs">
-  <button class="tab active" onclick="showTab('stand1',this)">Squire Division</button>
-  <button class="tab" onclick="showTab('stand2',this)">Knight Division</button>
-  <button class="tab" onclick="showTab('stand3',this)">Monarch Division</button>
-  <button class="tab" onclick="showTab('stand4',this)">Divine Division</button>
+<div class="stand-tabs">
+  <button class="stand-tab active" onclick="showStandTab('stand1',this)">Squire Division</button>
+  <button class="stand-tab" onclick="showStandTab('stand2',this)">Knight Division</button>
+  <button class="stand-tab" onclick="showStandTab('stand3',this)">Monarch Division</button>
+  <button class="stand-tab" onclick="showStandTab('stand4',this)">Divine Division</button>
 </div>
 
-<!-- SQUIRE -->
-<div id="stand1" class="division active">
+<div id="stand1" class="stand-division active">
 <h3 contenteditable="true">Squire Division</h3>
 <table>
 <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
@@ -238,47 +237,66 @@ Just Rocket League, organized and played the right way.</p>
 </table>
 </div>
 
-<!-- KNIGHT -->
-<div id="stand2" class="division">
+<div id="stand2" class="stand-division">
 <h3 contenteditable="true">Knight Division</h3>
 <table>
 <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
 <tr><td contenteditable>Team G</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team H</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team I</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team J</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team K</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team L</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
 </table>
 </div>
 
-<!-- MONARCH -->
-<div id="stand3" class="division">
+<div id="stand3" class="stand-division">
 <h3 contenteditable="true">Monarch Division</h3>
 <table>
 <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
 <tr><td contenteditable>Team M</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team N</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team O</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team P</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team Q</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team R</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
 </table>
 </div>
 
-<!-- DIVINE -->
-<div id="stand4" class="division">
+<div id="stand4" class="stand-division">
 <h3 contenteditable="true">Divine Division</h3>
 <table>
 <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
 <tr><td contenteditable>Team S</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team T</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team U</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team V</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team W</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team X</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
 </table>
 </div>
+
+<style>
+.stand-tabs{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.stand-tab{
+  background:#1f2937;
+  color:#ffffff !important;
+  padding:10px 18px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:16px;
+}
+
+.stand-tab.active{
+  background:#7c3aed;
+  color:#ffffff !important;
+}
+
+.stand-division{display:none}
+.stand-division.active{display:block}
+</style>
+
+<script>
+function showStandTab(id, btn){
+  document.querySelectorAll('.stand-division').forEach(d=>d.classList.remove('active'));
+  document.querySelectorAll('.stand-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
 </section>
 
 
