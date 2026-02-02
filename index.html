@@ -215,94 +215,133 @@ Just Rocket League, organized and played the right way.</p>
 
 <!-- ================= STANDINGS ================= -->
 <section id="standings">
+  <h2 contenteditable="true">League Standings</h2>
 
-<h2 contenteditable="true">League Standings</h2>
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab active" onclick="showStandingsTab('stand1', this)">Squire Division</button>
+    <button class="tab" onclick="showStandingsTab('stand2', this)">Knight Division</button>
+    <button class="tab" onclick="showStandingsTab('stand3', this)">Monarch Division</button>
+    <button class="tab" onclick="showStandingsTab('stand4', this)">Divine Division</button>
+  </div>
 
-<div class="tabs">
-  <button class="tab active" onclick="showStandingsTab('stand1',this)">Squire Division</button>
-  <button class="tab" onclick="showStandingsTab('stand2',this)">Knight Division</button>
-  <button class="tab" onclick="showStandingsTab('stand3',this)">Monarch Division</button>
-  <button class="tab" onclick="showStandingsTab('stand4',this)">Divine Division</button>
-</div>
+  <!-- SQUIRE -->
+  <div id="stand1" class="division active">
+    <h3 contenteditable="true">Squire Division</h3>
+    <table class="standings">
+      <thead>
+        <tr>
+          <th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td contenteditable>Team A</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team B</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team C</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team D</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team E</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team F</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+      </tbody>
+    </table>
+  </div>
 
-<!-- ===== SQUIRE DIVISION ===== -->
-<div id="stand1" class="division active">
-<h3 contenteditable="true">Squire Division</h3>
-<table class="standings">
-<thead>
-<tr>
-<th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th><th>Manual</th>
-</tr>
-</thead>
-<tbody>
-<tr><td contenteditable="true">Team A</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team B</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team C</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team D</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team E</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team F</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-</tbody>
-</table>
-</div>
+  <!-- KNIGHT -->
+  <div id="stand2" class="division">
+    <h3 contenteditable="true">Knight Division</h3>
+    <table class="standings">
+      <thead><tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr></thead>
+      <tbody>
+        <tr><td contenteditable>Team G</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team H</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team I</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team J</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team K</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team L</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+      </tbody>
+    </table>
+  </div>
 
-<!-- ===== KNIGHT DIVISION ===== -->
-<div id="stand2" class="division">
-<h3 contenteditable="true">Knight Division</h3>
-<table class="standings">
-<thead><tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th><th>Manual</th></tr></thead>
-<tbody>
-<tr><td contenteditable="true">Team G</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team H</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team I</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team J</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team K</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team L</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-</tbody>
-</table>
-</div>
+  <!-- MONARCH -->
+  <div id="stand3" class="division">
+    <h3 contenteditable="true">Monarch Division</h3>
+    <table class="standings">
+      <thead><tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr></thead>
+      <tbody>
+        <tr><td contenteditable>Team M</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team N</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team O</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team P</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team Q</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team R</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+      </tbody>
+    </table>
+  </div>
 
-<!-- ===== MONARCH DIVISION ===== -->
-<div id="stand3" class="division">
-<h3 contenteditable="true">Monarch Division</h3>
-<table class="standings">
-<thead><tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th><th>Manual</th></tr></thead>
-<tbody>
-<tr><td contenteditable="true">Team M</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team N</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team O</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team P</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team Q</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team R</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-</tbody>
-</table>
-</div>
-
-<!-- ===== DIVINE DIVISION ===== -->
-<div id="stand4" class="division">
-<h3 contenteditable="true">Divine Division</h3>
-<table class="standings">
-<thead><tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th><th>Manual</th></tr></thead>
-<tbody>
-<tr><td contenteditable="true">Team S</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team T</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team U</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team V</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team W</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable="true">Team X</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-</tbody>
-</table>
-</div>
-
+  <!-- DIVINE -->
+  <div id="stand4" class="division">
+    <h3 contenteditable="true">Divine Division</h3>
+    <table class="standings">
+      <thead><tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr></thead>
+      <tbody>
+        <tr><td contenteditable>Team S</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team T</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team U</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team V</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team W</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td contenteditable>Team X</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
-<!-- ===== STANDINGS CSS ===== -->
+<!-- ================= STYLES ================= -->
 <style>
-#standings .division { display:none; }
-#standings .division.active { display:block; }
-#standings .tab.active { background:#7c3aed; color:#fff; }
+#standings .division { display: none; }
+#standings .division.active { display: block; }
+
+#standings .tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+#standings .tab {
+  background: #1f2937;
+  color: #ffffff !important;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#standings .tab.active {
+  background: #7c3aed;
+}
+
+#standings table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#standings th, #standings td {
+  border: 1px solid #374151;
+  padding: 8px;
+  text-align: center;
+}
+
+#standings input {
+  width: 60px;
+  background: #111827;
+  color: #fff;
+  border: 1px solid #374151;
+  text-align: center;
+}
 </style>
 
-<!-- ===== STANDINGS SCRIPT ===== -->
+<!-- ================= SCRIPT ================= -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -313,20 +352,21 @@ document.addEventListener("DOMContentLoaded", function () {
     btn.classList.add('active');
   };
 
-  document.querySelectorAll('#standings [contenteditable]').forEach((el,i)=>{
-    const k='stand_ce_'+i;
-    if(localStorage.getItem(k)) el.innerHTML=localStorage.getItem(k);
-    el.addEventListener('input',()=>localStorage.setItem(k,el.innerHTML));
+  document.querySelectorAll('#standings [contenteditable]').forEach((el, i) => {
+    const key = 'stand_ce_' + i;
+    if (localStorage.getItem(key)) el.innerHTML = localStorage.getItem(key);
+    el.addEventListener('input', () => localStorage.setItem(key, el.innerHTML));
   });
 
-  document.querySelectorAll('#standings input').forEach((el,i)=>{
-    const k='stand_in_'+i;
-    if(localStorage.getItem(k)) el.value=localStorage.getItem(k);
-    el.addEventListener('input',()=>localStorage.setItem(k,el.value));
+  document.querySelectorAll('#standings input').forEach((el, i) => {
+    const key = 'stand_in_' + i;
+    if (localStorage.getItem(key)) el.value = localStorage.getItem(key);
+    el.addEventListener('input', () => localStorage.setItem(key, el.value));
   });
 
 });
 </script>
+
 
 
 <section id="socials">
