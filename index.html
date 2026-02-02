@@ -294,28 +294,42 @@ Just Rocket League, organized and played the right way.</p>
 .tab.active { background:#7c3aed; color:#fff; }
 </style>
 
-<!-- REQUIRED TAB SCRIPT -->
+<!-- REQUIRED TAB SCRIPT (GOOGLE SITES SAFE) -->
 <script>
-function showTab(id, btn) {
-  document.querySelectorAll('.division').forEach(d => d.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
-}
+document.addEventListener("DOMContentLoaded", function () {
 
-/* SAVE EDITS */
-document.querySelectorAll('[contenteditable]').forEach((el,i)=>{
-  const k='ce_'+i;
-  if(localStorage[k]) el.innerHTML=localStorage[k];
-  el.oninput=()=>localStorage[k]=el.innerHTML;
-});
+  window.showTab = function(id, btn) {
+    document.querySelectorAll('.division').forEach(d => d.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  };
 
-document.querySelectorAll('input').forEach((el,i)=>{
-  const k='in_'+i;
-  if(localStorage[k]) el.value=localStorage[k];
-  el.oninput=()=>localStorage[k]=el.value;
+  /* SAVE CONTENTEDITABLE TEXT */
+  document.querySelectorAll('[contenteditable]').forEach((el, i) => {
+    const key = 'ce_' + i;
+    if (localStorage.getItem(key)) {
+      el.innerHTML = localStorage.getItem(key);
+    }
+    el.addEventListener('input', () => {
+      localStorage.setItem(key, el.innerHTML);
+    });
+  });
+
+  /* SAVE INPUT VALUES */
+  document.querySelectorAll('input').forEach((el, i) => {
+    const key = 'in_' + i;
+    if (localStorage.getItem(key)) {
+      el.value = localStorage.getItem(key);
+    }
+    el.addEventListener('input', () => {
+      localStorage.setItem(key, el.value);
+    });
+  });
+
 });
 </script>
+
 
 
 
