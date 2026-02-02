@@ -217,7 +217,6 @@ Just Rocket League, organized and played the right way.</p>
 <section id="standings">
   <h2 contenteditable="true">League Standings</h2>
 
-  <!-- TABS -->
   <div class="stand-tabs">
     <button class="stand-tab active" onclick="showStandingsTab('stand1', this)">Squire Division</button>
     <button class="stand-tab" onclick="showStandingsTab('stand2', this)">Knight Division</button>
@@ -225,9 +224,9 @@ Just Rocket League, organized and played the right way.</p>
     <button class="stand-tab" onclick="showStandingsTab('stand4', this)">Divine Division</button>
   </div>
 
-  <!-- SQUIRE -->
+  <!-- DIVISIONS -->
   <div id="stand1" class="stand-division active">
-    <h3 contenteditable="true">Squire Division</h3>
+    <h3 contenteditable>Squire Division</h3>
     <table>
       <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
       <tr><td contenteditable>Team A</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
@@ -239,9 +238,8 @@ Just Rocket League, organized and played the right way.</p>
     </table>
   </div>
 
-  <!-- KNIGHT -->
   <div id="stand2" class="stand-division">
-    <h3 contenteditable="true">Knight Division</h3>
+    <h3 contenteditable>Knight Division</h3>
     <table>
       <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
       <tr><td contenteditable>Team G</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
@@ -253,9 +251,8 @@ Just Rocket League, organized and played the right way.</p>
     </table>
   </div>
 
-  <!-- MONARCH -->
   <div id="stand3" class="stand-division">
-    <h3 contenteditable="true">Monarch Division</h3>
+    <h3 contenteditable>Monarch Division</h3>
     <table>
       <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
       <tr><td contenteditable>Team M</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
@@ -267,9 +264,8 @@ Just Rocket League, organized and played the right way.</p>
     </table>
   </div>
 
-  <!-- DIVINE -->
   <div id="stand4" class="stand-division">
-    <h3 contenteditable="true">Divine Division</h3>
+    <h3 contenteditable>Divine Division</h3>
     <table>
       <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
       <tr><td contenteditable>Team S</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
@@ -281,113 +277,48 @@ Just Rocket League, organized and played the right way.</p>
     </table>
   </div>
 
-  <!-- STYLES -->
   <style>
-    .stand-tabs { display:flex; gap:10px; margin-bottom:16px; flex-wrap:wrap }
-    .stand-tab { background:#1f2937; color:#fff; padding:10px 16px; border:none; border-radius:6px; cursor:pointer; font-weight:600 }
-    .stand-tab.active { background:#7c3aed }
-    .stand-division { display:none }
-    .stand-division.active { display:block }
-    #standings table { width:100%; border-collapse:collapse }
-    #standings th, #standings td { border:1px solid #374151; padding:8px; text-align:center }
-    #standings input { width:60px; background:#111827; color:#fff; border:1px solid #374151; text-align:center }
+    .stand-tabs{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+    .stand-tab{background:#1f2937;color:#fff;padding:10px 16px;border:none;border-radius:6px;cursor:pointer;font-weight:600}
+    .stand-tab.active{background:#7c3aed}
+    .stand-division{display:none}
+    .stand-division.active{display:block}
+    #standings table{width:100%;border-collapse:collapse}
+    #standings th,#standings td{border:1px solid #374151;padding:8px;text-align:center}
+    #standings input{width:60px;background:#111827;color:#fff;border:1px solid #374151;text-align:center}
   </style>
 
-  <!-- SCRIPT -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    function showStandingsTab(id, btn){
+      document.querySelectorAll('.stand-division').forEach(d=>d.classList.remove('active'))
+      document.querySelectorAll('.stand-tab').forEach(b=>b.classList.remove('active'))
+      document.getElementById(id).classList.add('active')
+      btn.classList.add('active')
+    }
 
-      window.showStandingsTab = function(id, btn){
-        document.querySelectorAll('.stand-division').forEach(d => d.classList.remove('active'));
-        document.querySelectorAll('.stand-tab').forEach(b => b.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
-        btn.classList.add('active');
-      };
-
-      document.querySelectorAll('#standings [contenteditable]').forEach((el,i)=>{
-        const key='stand_txt_'+i;
-        if(localStorage.getItem(key)) el.innerHTML=localStorage.getItem(key);
-        el.addEventListener('input',()=>localStorage.setItem(key,el.innerHTML));
-      });
-
-      document.querySelectorAll('#standings input').forEach((el,i)=>{
-        const key='stand_val_'+i;
-        if(localStorage.getItem(key)) el.value=localStorage.getItem(key);
-        el.addEventListener('input',()=>localStorage.setItem(key,el.value));
-      });
-
-    });
+    document.querySelectorAll('#standings [contenteditable], #standings input')
+      .forEach((el,i)=>{
+        const key='stand_save_'+i
+        if(localStorage.getItem(key)) el.value ? el.value=localStorage.getItem(key) : el.innerHTML=localStorage.getItem(key)
+        el.addEventListener('input',()=>localStorage.setItem(key, el.value ?? el.innerHTML))
+      })
   </script>
 </section>
 
-
-
+<!-- ================= SOCIALS ================= -->
 <section id="socials">
-<h2>Social Media</h2>
-<div class="cards">
-<div class="card">Discord: discord.gg/YOURDISCORD</div>
-<div class="card">Twitter/X: @YOURHANDLE</div>
-<div class="card">TikTok: @YOURHANDLE</div>
-<div class="card">Twitch: twitch.tv/YOURCHANNEL</div>
-</div>
+  <h2>Social Media</h2>
+  <div class="cards">
+    <div class="card">Discord: discord.gg/YOURDISCORD</div>
+    <div class="card">Twitter/X: @YOURHANDLE</div>
+    <div class="card">TikTok: @YOURHANDLE</div>
+    <div class="card">Twitch: twitch.tv/YOURCHANNEL</div>
+  </div>
 </section>
 
 <footer>
-<p>© 2026 Drive Dynasty Championship Series</p>
+  <p>© 2026 Drive Dynasty Championship Series</p>
 </footer>
-
-<script>
-function showTab(id, btn){
-  document.querySelectorAll('.division').forEach(d => d.classList.remove('active'))
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'))
-  document.getElementById(id).classList.add('active')
-  btn.classList.add('active')
-}
-
-function updateStandings(){
-  document.querySelectorAll('.standings tbody').forEach(body=>{
-    const rows = Array.from(body.rows)
-
-    rows.forEach(r => r.classList.remove('top'))
-
-    rows.sort((a,b)=>{
-      const aPts = parseInt(a.querySelector('.pts input').value) || 0
-      const bPts = parseInt(b.querySelector('.pts input').value) || 0
-      return bPts - aPts
-    })
-
-    rows.forEach((row,i)=>{
-      body.appendChild(row)
-      if(i < 2) row.classList.add('top')
-    })
-  })
-}
-
-document.addEventListener('input', updateStandings)
-updateStandings()
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const editables = document.querySelectorAll(".editable");
-
-  editables.forEach((el, index) => {
-    const key = "ddcs-editable-" + index;
-
-    // Load saved value
-    const saved = localStorage.getItem(key);
-    if (saved !== null) {
-      el.innerHTML = saved;
-    }
-
-    // Save on edit
-    el.addEventListener("input", () => {
-      localStorage.setItem(key, el.innerHTML);
-    });
-  });
-});
-</script>
-
 
 </body>
 </html>
