@@ -216,73 +216,153 @@ Just Rocket League, organized and played the right way.</p>
 <section id="standings">
 <h2 contenteditable="true">League Standings</h2>
 
-<!-- CLICKABLE DIVISION NAMES -->
-<div class="standings-nav">
-  <span onclick="showStand('squire')">Squire Division</span>
-  <span onclick="showStand('knight')">Knight Division</span>
-  <span onclick="showStand('monarch')">Monarch Division</span>
-  <span onclick="showStand('divine')">Divine Division</span>
+<!-- DIVISION NAV -->
+<div class="stand-nav">
+  <span onclick="showDivision('squire')">Squire Division</span>
+  <span onclick="showDivision('knight')">Knight Division</span>
+  <span onclick="showDivision('monarch')">Monarch Division</span>
+  <span onclick="showDivision('divine')">Divine Division</span>
 </div>
 
 <!-- SQUIRE -->
-<div id="squire" class="stand-division active">
+<div id="squire" class="division active">
 <h3 contenteditable="true">Squire Division</h3>
 <table>
-<tr><th>Team</th><th>Pts</th><th>W</th><th>L</th></tr>
-<tr><td contenteditable>Team A</td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team B</td><td><input></td><td><input></td><td><input></td></tr>
+<thead>
+<tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th></tr>
+</thead>
+<tbody>
+<tr>
+<td contenteditable>Team A</td>
+<td><input oninput="sortTable(this)"></td>
+<td><input></td>
+<td><input></td>
+<td><input></td>
+</tr>
+<tr>
+<td contenteditable>Team B</td>
+<td><input oninput="sortTable(this)"></td>
+<td><input></td>
+<td><input></td>
+<td><input></td>
+</tr>
+</tbody>
 </table>
 </div>
 
 <!-- KNIGHT -->
-<div id="knight" class="stand-division">
+<div id="knight" class="division">
 <h3 contenteditable="true">Knight Division</h3>
 <table>
-<tr><th>Team</th><th>Pts</th><th>W</th><th>L</th></tr>
-<tr><td contenteditable>Team C</td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team D</td><td><input></td><td><input></td><td><input></td></tr>
+<thead>
+<tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th></tr>
+</thead>
+<tbody>
+<tr>
+<td contenteditable>Team C</td>
+<td><input oninput="sortTable(this)"></td>
+<td><input></td>
+<td><input></td>
+<td><input></td>
+</tr>
+<tr>
+<td contenteditable>Team D</td>
+<td><input oninput="sortTable(this)"></td>
+<td><input></td>
+<td><input></td>
+<td><input></td>
+</tr>
+</tbody>
 </table>
 </div>
 
 <!-- MONARCH -->
-<div id="monarch" class="stand-division">
+<div id="monarch" class="division">
 <h3 contenteditable="true">Monarch Division</h3>
 <table>
-<tr><th>Team</th><th>Pts</th><th>W</th><th>L</th></tr>
-<tr><td contenteditable>Team E</td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team F</td><td><input></td><td><input></td><td><input></td></tr>
+<thead>
+<tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th></tr>
+</thead>
+<tbody>
+<tr>
+<td contenteditable>Team E</td>
+<td><input oninput="sortTable(this)"></td>
+<td><input></td>
+<td><input></td>
+<td><input></td>
+</tr>
+<tr>
+<td contenteditable>Team F</td>
+<td><input oninput="sortTable(this)"></td>
+<td><input></td>
+<td><input></td>
+<td><input></td>
+</tr>
+</tbody>
 </table>
 </div>
 
 <!-- DIVINE -->
-<div id="divine" class="stand-division">
+<div id="divine" class="division">
 <h3 contenteditable="true">Divine Division</h3>
 <table>
-<tr><th>Team</th><th>Pts</th><th>W</th><th>L</th></tr>
-<tr><td contenteditable>Team G</td><td><input></td><td><input></td><td><input></td></tr>
-<tr><td contenteditable>Team H</td><td><input></td><td><input></td><td><input></td></tr>
+<thead>
+<tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th></tr>
+</thead>
+<tbody>
+<tr>
+<td contenteditable>Team G</td>
+<td><input oninput="sortTable(this)"></td>
+<td><input></td>
+<td><input></td>
+<td><input></td>
+</tr>
+<tr>
+<td contenteditable>Team H</td>
+<td><input oninput="sortTable(this)"></td>
+<td><input></td>
+<td><input></td>
+<td><input></td>
+</tr>
+</tbody>
 </table>
 </div>
 </section>
 
 <style>
-.standings-nav span {
-  margin-right: 15px;
+.stand-nav span {
+  margin-right: 16px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 700;
   color: #7c3aed;
 }
-.standings-nav span:hover {
+.stand-nav span:hover {
   text-decoration: underline;
 }
-.stand-division { display: none; }
-.stand-division.active { display: block; }
+.division { display: none; }
+.division.active { display: block; }
+table { width:100%; border-collapse:collapse; margin-top:10px }
+th, td { border:1px solid #374151; padding:8px; text-align:center }
+input { width:60px; text-align:center }
 </style>
 
 <script>
-function showStand(id) {
-  document.querySelectorAll('.stand-division').forEach(d => d.classList.remove('active'));
+function showDivision(id) {
+  document.querySelectorAll('.division').forEach(d => d.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+}
+
+function sortTable(input) {
+  const tbody = input.closest("tbody");
+  const rows = Array.from(tbody.querySelectorAll("tr"));
+
+  rows.sort((a, b) => {
+    const aPts = parseInt(a.children[1].querySelector("input").value) || 0;
+    const bPts = parseInt(b.children[1].querySelector("input").value) || 0;
+    return bPts - aPts;
+  });
+
+  rows.forEach(row => tbody.appendChild(row));
 }
 </script>
 
