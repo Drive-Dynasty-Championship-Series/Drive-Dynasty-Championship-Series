@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drive Dynasty Championship Series | 2v2 Rocket League</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #000000;
+      --card: #0f1220;
+      --blue: #3aa9ff;
+      --pink: #ff4fd8;
+      --purple: #8b5cff;
+      --text: #f2f4ff;
+      --muted: #a6accd;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #000;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    nav ul {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    nav a:hover { color: var(--blue); }
+
+    header {
+      padding: 6rem 1.5rem;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(0,0,0,0.85), #000);
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      background: linear-gradient(135deg, var(--blue), var(--purple), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      margin-top: 1rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 4rem 1.5rem;
+    }
+
+    section h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--blue);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 1.75rem;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      padding: 0.85rem;
+      text-align: left;
+    }
+
+    th {
+      color: var(--pink);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    tr:not(:last-child) td {
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .division {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 1.75rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .division h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--purple);
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#rules">Rules</a></li>
+    <li><a href="#schedules">Schedules</a></li>
+    <li><a href="#socials">Socials</a></li>
+  </ul>
+</nav>
+
+<header id="home">
+  <h1>Drive Dynasty Championship Series</h1>
+  <p>The premier 2v2 Rocket League league built for competition, consistency, and champions.</p>
+</header>
+
+<section id="about">
+  <h2>About the League</h2>
+  <div class="cards">
+    <div class="card">2v2 competitive format focused on teamwork and mechanics.</div>
+    <div class="card">Season-based structure with standings and playoffs.</div>
+    <div class="card">Community-first league with enforced fair play.</div>
+  </div>
+</section>
+
+<section id="rules">
+  <h2>League Rules</h2>
+  <div class="cards">
+    <div class="card">Best-of-5 matches</div>
+    <div class="card">2 starters + 1 optional sub</div>
+    <div class="card">No smurfing or toxicity</div>
+  </div>
+</section>
+
+<section id="schedules">
+  <h2>League Schedules</h2>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showSchedule('schedule-d1')">Division 1</button>
+    <button class="tab" onclick="showSchedule('schedule-d2')">Division 2</button>
+    <button class="tab" onclick="showSchedule('schedule-d3')">Division 3</button>
+    <button class="tab" onclick="showSchedule('schedule-d4')">Division 4</button>
+  </div>
+
+  <div id="schedule-d1" class="division schedule active">
+    <h3>Division 1</h3>
+    <table>
+      <tr><th>Week</th><th>Match</th><th>Date</th><th>Time</th></tr>
+      <tr><td>Week 1</td><td>Team Alpha vs Boost Kings</td><td>Mar 10</td><td>8:00 PM EST</td></tr>
+    </table>
+  </div>
+
+  <div id="schedule-d2" class="division schedule">
+    <h3>Division 2</h3>
+    <table>
+      <tr><th>Week</th><th>Match</th><th>Date</th><th>Time</th></tr>
+      <tr><td>Week 1</td><td>Skyline vs Corner Boost</td><td>Mar 11</td><td>7:30 PM EST</td></tr>
+    </table>
+  </div>
+
+  <div id="schedule-d3" class="division schedule">
+    <h3>Division 3</h3>
+    <table>
+      <tr><th>Week</th><th>Match</th><th>Date</th><th>Time</th></tr>
+      <tr><td>Week 1</td><td>Flip Reset vs Crossbar Crew</td><td>Mar 12</td><td>8:30 PM EST</td></tr>
+    </table>
+  </div>
+
+  <div id="schedule-d4" class="division schedule">
+    <h3>Division 4</h3>
+    <table>
+      <tr><th>Week</th><th>Match</th><th>Date</th><th>Time</th></tr>
+      <tr><td>Week 1</td><td>Rookie Rush vs Open Net</td><td>Mar 13</td><td>6:00 PM EST</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="standings">
+  <h2>League Standings</h2>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showDivision('standings-d1')">Division 1</button>
+    <button class="tab" onclick="showDivision('standings-d2')">Division 2</button>
+    <button class="tab" onclick="showDivision('standings-d3')">Division 3</button>
+    <button class="tab" onclick="showDivision('standings-d4')">Division 4</button>
+  </div>
+
+  <div id="standings-d1" class="division standings active">
+    <h3>Division 1</h3>
+    <table class="standings-table">
+      <thead>
+        <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Team Alpha</td><td>15</td><td>5</td><td>1</td><td>+8</td><td>5</td></tr>
+        <tr><td>Boost Kings</td><td>12</td><td>4</td><td>2</td><td>+3</td><td>4</td></tr>
+        <tr><td>Goal Rush</td><td>6</td><td>2</td><td>4</td><td>-2</td><td>2</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="standings-d2" class="division standings">
+    <h3>Division 2</h3>
+    <table class="standings-table">
+      <thead>
+        <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Skyline</td><td>12</td><td>4</td><td>2</td><td>+4</td><td>4</td></tr>
+        <tr><td>Corner Boost</td><td>9</td><td>3</td><td>3</td><td>+1</td><td>3</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="standings-d3" class="division standings">
+    <h3>Division 3</h3>
+    <table class="standings-table">
+      <thead>
+        <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Flip Reset</td><td>9</td><td>3</td><td>3</td><td>0</td><td>3</td></tr>
+        <tr><td>Crossbar Crew</td><td>3</td><td>1</td><td>5</td><td>-6</td><td>1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="standings-d4" class="division standings">
+    <h3>Division 4</h3>
+    <table class="standings-table">
+      <thead>
+        <tr><th>Team</th><th>Pts</th><th>W</th><th>L</th><th>+/-</th><th>Series Won</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Rookie Rush</td><td>6</td><td>2</td><td>4</td><td>-3</td><td>2</td></tr>
+        <tr><td>Open Net</td><td>0</td><td>0</td><td>6</td><td>-9</td><td>0</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<script>
+  function showDivision(id) {
+    document.querySelectorAll('.standings').forEach(d => d.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  document.querySelectorAll('.standings-table').forEach(table => {
+    const rows = Array.from(table.querySelectorAll('tbody tr'));
+    rows.sort((a, b) => parseInt(b.children[1].innerText) - parseInt(a.children[1].innerText));
+    rows.forEach((row, index) => {
+      table.querySelector('tbody').appendChild(row);
+      if (index < 2) row.classList.add('top');
+    });
+  });
+</script>
+
+<section id="socials">
+  <h2>Social Media</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Discord</h3>
+      <p>Join the official Drive Dynasty community.</p>
+      <p><a href="https://discord.gg/YOURDISCORD" target="_blank">discord.gg/YOURDISCORD</a></p>
+    </div>
+    <div class="card">
+      <h3>Twitter / X</h3>
+      <p>Match updates, announcements, and highlights.</p>
+      <p><a href="https://twitter.com/YOURHANDLE" target="_blank">@YOURHANDLE</a></p>
+    </div>
+    <div class="card">
+      <h3>TikTok</h3>
+      <p>Clips, goals, and hype moments.</p>
+      <p><a href="https://tiktok.com/@YOURHANDLE" target="_blank">@YOURHANDLE</a></p>
+    </div>
+    <div class="card">
+      <h3>Twitch</h3>
+      <p>Live match streams and playoffs.</p>
+      <p><a href="https://twitch.tv/YOURCHANNEL" target="_blank">twitch.tv/YOURCHANNEL</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Drive Dynasty Championship Series</p>
+</footer>
+
+</body>
+</html>
