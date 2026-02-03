@@ -23,23 +23,32 @@ h1{
 .tabs{
   display:flex;
   justify-content:center;
-  gap:12px;
-  margin-bottom:20px;
+  gap:14px;
+  margin-bottom:25px;
   flex-wrap:wrap;
 }
 
 .tab{
-  padding:10px 18px;
-  border:none;
-  cursor:pointer;
-  font-weight:bold;
-  border-radius:6px;
-  background:#222;
+  padding:10px 22px;
+  border-radius:30px;
+  border:2px solid #3aa9ff;
+  background:transparent;
   color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s ease;
 }
 
+/* Hover Effect */
+.tab:hover{
+  background:rgba(58,169,255,0.2);
+}
+
+/* Active Tab */
 .tab.active{
-  background:linear-gradient(45deg,#ff4df0,#3aa9ff,#8b5cf6);
+  background:#3aa9ff;
+  color:black;
+  box-shadow:0 0 10px #3aa9ff;
 }
 
 /* Division Sections */
@@ -216,3 +225,4 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 </body>
 </html>
+
