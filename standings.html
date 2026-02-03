@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>League Standings</title>
+
+<style>
+body{
+  background:#000;
+  font-family:Arial, sans-serif;
+  color:white;
+  margin:0;
+  padding:20px;
+}
+
+/* Title */
+h1{
+  text-align:center;
+  color:#3aa9ff;
+}
+
+/* Tabs */
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.tab{
+  padding:10px 18px;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+  border-radius:6px;
+  background:#222;
+  color:white;
+}
+
+.tab.active{
+  background:linear-gradient(45deg,#ff4df0,#3aa9ff,#8b5cf6);
+}
+
+/* Division Sections */
+.division{
+  display:none;
+}
+
+.division.active{
+  display:block;
+}
+
+/* Table */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+}
+
+th,td{
+  border:1px solid #444;
+  padding:8px;
+  text-align:center;
+}
+
+th{
+  background:#111;
+}
+
+input{
+  width:60px;
+  background:#111;
+  border:1px solid #444;
+  color:white;
+  text-align:center;
+}
+
+/* Top 2 Highlight */
+.top{
+  background:rgba(58,169,255,0.25);
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>League Standings</h1>
+
+<!-- Tabs -->
+<div class="tabs">
+  <button class="tab active" onclick="showDivision('d1',this)">Squire Division</button>
+  <button class="tab" onclick="showDivision('d2',this)">Knight Division</button>
+  <button class="tab" onclick="showDivision('d3',this)">Monarch Division</button>
+  <button class="tab" onclick="showDivision('d4',this)">Divine Division</button>
+</div>
+
+<!-- Division Template Function Will Duplicate -->
+<div id="standingsContainer"></div>
+
+<script>
+
+/* ---------- CREATE DIVISIONS ---------- */
+
+const divisions = [
+  "Squire Division",
+  "Knight Division",
+  "Monarch Division",
+  "Divine Division"
+];
+
+const container = document.getElementById("standingsContainer");
+
+divisions.forEach((name,index)=>{
+
+  const id = "d"+(index+1);
+
+  let html = `
+  <div id="${id}" class="division ${index===0 ? 'active':''}">
+    <h2 contenteditable="true">${name}</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Pts</th>
+          <th>Wins</th>
+          <th>Losses</th>
+          <th>+/-</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${createTeams(index)}
+      </tbody>
+    </table>
+  </div>
+  `;
+
+  container.innerHTML += html;
+});
+
+/* ---------- TEAM ROWS ---------- */
+
+function createTeams(div){
+  let rows="";
+  for(let i=0;i<6;i++){
+    rows+=`
+    <tr>
+      <td contenteditable="true">Team ${String.fromCharCode(65+(div*6+i))}</td>
+      <td class="pts"><input></td>
+      <td><input></td>
+      <td><input></td>
+      <td><input></td>
+    </tr>`;
+  }
+  return rows;
+}
+
+/* ---------- TAB SWITCH ---------- */
+
+function showDivision(id,btn){
+  document.querySelectorAll(".division").forEach(d=>d.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+
+  document.getElementById(id).classList.add("active");
+  btn.classList.add("active");
+}
+
+/* ---------- AUTO SORT ---------- */
+
+function updateStandings(){
+
+  document.querySelectorAll("tbody").forEach(body=>{
+
+    let rows = Array.from(body.rows);
+
+    rows.forEach(r=>r.classList.remove("top"));
+
+    rows.sort((a,b)=>{
+      const aPts = parseInt(a.querySelector(".pts input").value) || 0;
+      const bPts = parseInt(b.querySelector(".pts input").value) || 0;
+      return bPts - aPts;
+    });
+
+    rows.forEach((row,i)=>{
+      body.appendChild(row);
+      if(i<2) row.classList.add("top");
+    });
+
+  });
+}
+
+document.addEventListener("input",updateStandings);
+
+/* ---------- SAVE DATA ---------- */
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+  document.querySelectorAll("input").forEach((el,i)=>{
+    const key="stand_val_"+i;
+    if(localStorage.getItem(key)) el.value=localStorage.getItem(key);
+    el.addEventListener("input",()=>localStorage.setItem(key,el.value));
+  });
+
+  document.querySelectorAll("[contenteditable]").forEach((el,i)=>{
+    const key="stand_txt_"+i;
+    if(localStorage.getItem(key)) el.innerHTML=localStorage.getItem(key);
+    el.addEventListener("input",()=>localStorage.setItem(key,el.innerHTML));
+  });
+
+  updateStandings();
+});
+
+</script>
+
+</body>
+</html>
