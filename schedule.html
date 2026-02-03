@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>League Schedules</title>
+
+<style>
+
+body{
+  background:#000;
+  font-family:Arial, sans-serif;
+  color:white;
+  margin:0;
+  padding:20px;
+}
+
+/* Title */
+h1{
+  text-align:center;
+  color:#3aa9ff;
+}
+
+/* Tabs */
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-bottom:25px;
+  flex-wrap:wrap;
+}
+
+.tab{
+  padding:10px 22px;
+  border-radius:30px;
+  border:2px solid #3aa9ff;
+  background:transparent;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+.tab:hover{
+  background:rgba(58,169,255,0.2);
+}
+
+.tab.active{
+  background:#3aa9ff;
+  color:black;
+  box-shadow:0 0 10px #3aa9ff;
+}
+
+/* Division Sections */
+.division{
+  display:none;
+}
+
+.division.active{
+  display:block;
+}
+
+/* Tables */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+}
+
+th,td{
+  border:1px solid #444;
+  padding:8px;
+  text-align:center;
+}
+
+th{
+  background:#111;
+}
+
+/* Back Home Button */
+.back-home{
+  position:fixed;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  
+  padding:12px 26px;
+  border-radius:30px;
+  font-weight:600;
+  font-size:16px;
+  text-decoration:none;
+  color:white;
+
+  border:2px solid transparent;
+
+  background:
+    linear-gradient(black, black) padding-box,
+    linear-gradient(90deg,#ff4dff,#3aa9ff,#8b5cf6) border-box;
+
+  transition:0.3s ease;
+}
+
+.back-home:hover{
+  transform:translateX(-50%) scale(1.08);
+  box-shadow:0 0 15px #3aa9ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="back-home">⬅ Back To Home</a>
+
+<h1>League Schedules</h1>
+
+<!-- Tabs -->
+<div class="tabs">
+<button class="tab active" onclick="showDivision('sched1',this)">Squire Division</button>
+<button class="tab" onclick="showDivision('sched2',this)">Knight Division</button>
+<button class="tab" onclick="showDivision('sched3',this)">Monarch Division</button>
+<button class="tab" onclick="showDivision('sched4',this)">Divine Division</button>
+</div>
+
+<!-- SQUIRE -->
+<div id="sched1" class="division active">
+<h2 contenteditable="true">Squire Division</h2>
+<table>
+<tr><th>Week</th><th>Match</th></tr>
+
+<tr><td>1</td><td contenteditable>Team A vs Team B</td></tr>
+<tr><td>1</td><td contenteditable>Team C vs Team D</td></tr>
+<tr><td>1</td><td contenteditable>Team E vs Team F</td></tr>
+
+<tr><td>2</td><td contenteditable>Team A vs Team C</td></tr>
+<tr><td>2</td><td contenteditable>Team B vs Team E</td></tr>
+<tr><td>2</td><td contenteditable>Team D vs Team F</td></tr>
+
+<tr><td>3</td><td contenteditable>Team A vs Team D</td></tr>
+<tr><td>3</td><td contenteditable>Team B vs Team F</td></tr>
+<tr><td>3</td><td contenteditable>Team C vs Team E</td></tr>
+
+<tr><td>4</td><td contenteditable>Team A vs Team E</td></tr>
+<tr><td>4</td><td contenteditable>Team B vs Team D</td></tr>
+<tr><td>4</td><td contenteditable>Team C vs Team F</td></tr>
+
+<tr><td>5</td><td contenteditable>Team A vs Team F</td></tr>
+<tr><td>5</td><td contenteditable>Team B vs Team C</td></tr>
+<tr><td>5</td><td contenteditable>Team D vs Team E</td></tr>
+
+</table>
+</div>
+
+<!-- KNIGHT -->
+<div id="sched2" class="division">
+<h2 contenteditable="true">Knight Division</h2>
+<table>
+<tr><th>Week</th><th>Match</th></tr>
+
+<tr><td>1</td><td contenteditable>Team G vs Team H</td></tr>
+<tr><td>1</td><td contenteditable>Team I vs Team J</td></tr>
+<tr><td>1</td><td contenteditable>Team K vs Team L</td></tr>
+
+<tr><td>2</td><td contenteditable>Team G vs Team I</td></tr>
+<tr><td>2</td><td contenteditable>Team H vs Team K</td></tr>
+<tr><td>2</td><td contenteditable>Team J vs Team L</td></tr>
+
+<tr><td>3</td><td contenteditable>Team G vs Team J</td></tr>
+<tr><td>3</td><td contenteditable>Team H vs Team L</td></tr>
+<tr><td>3</td><td contenteditable>Team I vs Team K</td></tr>
+
+<tr><td>4</td><td contenteditable>Team G vs Team K</td></tr>
+<tr><td>4</td><td contenteditable>Team H vs Team J</td></tr>
+<tr><td>4</td><td contenteditable>Team I vs Team L</td></tr>
+
+<tr><td>5</td><td contenteditable>Team G vs Team L</td></tr>
+<tr><td>5</td><td contenteditable>Team H vs Team I</td></tr>
+<tr><td>5</td><td contenteditable>Team J vs Team K</td></tr>
+
+</table>
+</div>
+
+<!-- MONARCH -->
+<div id="sched3" class="division">
+<h2 contenteditable="true">Monarch Division</h2>
+<table>
+<tr><th>Week</th><th>Match</th></tr>
+
+<tr><td>1</td><td contenteditable>Team M vs Team N</td></tr>
+<tr><td>1</td><td contenteditable>Team O vs Team P</td></tr>
+<tr><td>1</td><td contenteditable>Team Q vs Team R</td></tr>
+
+<tr><td>2</td><td contenteditable>Team M vs Team O</td></tr>
+<tr><td>2</td><td contenteditable>Team N vs Team Q</td></tr>
+<tr><td>2</td><td contenteditable>Team P vs Team R</td></tr>
+
+<tr><td>3</td><td contenteditable>Team M vs Team P</td></tr>
+<tr><td>3</td><td contenteditable>Team N vs Team R</td></tr>
+<tr><td>3</td><td contenteditable>Team O vs Team Q</td></tr>
+
+<tr><td>4</td><td contenteditable>Team M vs Team Q</td></tr>
+<tr><td>4</td><td contenteditable>Team N vs Team P</td></tr>
+<tr><td>4</td><td contenteditable>Team O vs Team R</td></tr>
+
+<tr><td>5</td><td contenteditable>Team M vs Team R</td></tr>
+<tr><td>5</td><td contenteditable>Team N vs Team O</td></tr>
+<tr><td>5</td><td contenteditable>Team P vs Team Q</td></tr>
+
+</table>
+</div>
+
+<!-- DIVINE -->
+<div id="sched4" class="division">
+<h2 contenteditable="true">Divine Division</h2>
+<table>
+<tr><th>Week</th><th>Match</th></tr>
+
+<tr><td>1</td><td contenteditable>Team S vs Team T</td></tr>
+<tr><td>1</td><td contenteditable>Team U vs Team V</td></tr>
+<tr><td>1</td><td contenteditable>Team W vs Team X</td></tr>
+
+<tr><td>2</td><td contenteditable>Team S vs Team U</td></tr>
+<tr><td>2</td><td contenteditable>Team T vs Team W</td></tr>
+<tr><td>2</td><td contenteditable>Team V vs Team X</td></tr>
+
+<tr><td>3</td><td contenteditable>Team S vs Team V</td></tr>
+<tr><td>3</td><td contenteditable>Team T vs Team X</td></tr>
+<tr><td>3</td><td contenteditable>Team U vs Team W</td></tr>
+
+<tr><td>4</td><td contenteditable>Team S vs Team W</td></tr>
+<tr><td>4</td><td contenteditable>Team T vs Team V</td></tr>
+<tr><td>4</td><td contenteditable>Team U vs Team X</td></tr>
+
+<tr><td>5</td><td contenteditable>Team S vs Team X</td></tr>
+<tr><td>5</td><td contenteditable>Team T vs Team U</td></tr>
+<tr><td>5</td><td contenteditable>Team V vs Team W</td></tr>
+
+</table>
+</div>
+
+<script>
+
+/* TAB SWITCH */
+function showDivision(id,btn){
+  document.querySelectorAll(".division").forEach(d=>d.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+
+  document.getElementById(id).classList.add("active");
+  btn.classList.add("active");
+}
+
+/* SAVE EDITS */
+document.addEventListener("DOMContentLoaded",()=>{
+
+  document.querySelectorAll("[contenteditable]").forEach((el,i)=>{
+    const key="sched_txt_"+i;
+
+    if(localStorage.getItem(key)){
+      el.innerHTML = localStorage.getItem(key);
+    }
+
+    el.addEventListener("input",()=>{
+      localStorage.setItem(key,el.innerHTML);
+    });
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>
