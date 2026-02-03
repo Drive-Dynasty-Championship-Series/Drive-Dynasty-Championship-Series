@@ -54,6 +54,48 @@ tbody tr.top{background:rgba(58,169,255,.15)}
 input{width:60px;background:#000;color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:.25rem;text-align:center}
 
 footer{text-align:center;padding:3rem;color:var(--muted);border-top:1px solid rgba(255,255,255,.06)}
+  /* Social Section */
+#socials{
+  text-align:center;
+  margin-top:40px;
+}
+
+/* Container */
+.cards{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+/* Individual Card */
+.card{
+  width:260px;
+  padding:18px;
+  border-radius:18px;
+
+  background:#0b132b;
+  border:1px solid #1c2541;
+
+  font-weight:600;
+
+  /* Prevent text overflow */
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Links */
+.card a{
+  color:white;
+  text-decoration:none;
+  word-break: break-word;
+}
+
+.card a:hover{
+  color:#3aa9ff;
+}
+
 </style>
 </head>
 
@@ -104,17 +146,39 @@ Just Rocket League, organized and played the right way.</p>
 
 
 <!-- ================= SOCIALS ================= -->
+<!-- ================= SOCIALS ================= -->
 <section id="socials">
   <h2>Social Media</h2>
+
   <div class="cards">
-    <div class="card">Discord:
-      https://discord.gg/mcNK29G68a </div>
-    <div class="card">Twitter/X: @YOURHANDLE</div>
-    <div class="card">TikTok: @drivedynastychampseries</div>
-    <div class="card">Twitch:
-      https://www.twitch.tv/drivedynastychampseries</div>
+
+    <div class="card">
+      Discord:<br>
+      <a href="https://discord.gg/mcNK29G68a" target="_blank">
+        https://discord.gg/mcNK29G68a
+      </a>
+    </div>
+
+    <div class="card">
+      Twitter/X:<br>
+      @YOURHANDLE
+    </div>
+
+    <div class="card">
+      TikTok:<br>
+      @drivedynastychampseries
+    </div>
+
+    <div class="card">
+      Twitch:<br>
+      <a href="https://www.twitch.tv/drivedynastychampseries" target="_blank">
+        https://www.twitch.tv/drivedynastychampseries
+      </a>
+    </div>
+
   </div>
 </section>
+
 
 <footer>
   <p>© 2026 Drive Dynasty Championship Series</p>
